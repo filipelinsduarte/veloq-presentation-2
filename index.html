@@ -3,370 +3,529 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Why Veloq Should Start Now — Filipe Lins Duarte</title>
+<title>Why Veloq Should Start Now</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.min.css">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --g:#10b981; --g2:#059669; --g-light:#d1fae5; --g-border:#a7f3d0;
-  --navy:#0d2137; --navy2:#1a3a52;
-  --bg:#fff; --bg2:#f8fafc; --bg3:#f1f5f9;
-  --text:#334155; --muted:#94a3b8; --border:#e2e8f0;
-  --red:#ef4444; --red-bg:#fef2f2; --red-border:#fecaca;
-  --yellow:#f59e0b; --yellow-bg:#fffbeb; --yellow-border:#fde68a;
-  --orange:#f97316; --orange-bg:#fff7ed; --orange-border:#fed7aa;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --g:#10b981;--g2:#059669;--gl:#d1fae5;--gb:#a7f3d0;
+  --navy:#0d2137;--navy2:#1a3a52;
+  --bg:#fff;--bg2:#f8fafc;
+  --tx:#334155;--mu:#94a3b8;--bd:#e2e8f0;
+  --red:#ef4444;--redbg:#fef2f2;--redbd:#fecaca;
+  --yel:#f59e0b;--yelbg:#fffbeb;--yelbd:#fde68a;
 }
-.reveal-viewport { background:#fff; }
-.reveal .slides { font-family:"Helvetica Neue",-apple-system,sans-serif; color:var(--text); }
-.reveal .slides section { text-align:left; padding:38px 58px 30px; height:100%; overflow:hidden; background:#fff; }
-.reveal h1,.reveal h2,.reveal h3,.reveal h4 { font-family:"Helvetica Neue",-apple-system,sans-serif; font-weight:800; letter-spacing:-.025em; text-transform:none; color:var(--navy); line-height:1.15; margin:0; }
-.reveal h1 { font-size:2.6em; }
-.reveal h2 { font-size:1.8em; margin-bottom:20px; }
-.reveal h2 span { color:var(--g); }
-.topbar { position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--g),#34d399); }
-.eyebrow { display:inline-flex; align-items:center; font-size:.6em; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--g2); background:var(--g-light); padding:3px 12px; border-radius:100px; margin-bottom:14px; }
-.reveal .progress { color:var(--g); height:2px; }
-.reveal .slide-number { color:var(--muted); font-size:.5em; background:none; }
-.note { padding:11px 16px; border-radius:9px; font-size:.7em; color:var(--text); line-height:1.65; margin-top:12px; }
-.note.green  { background:var(--g-light); border:1px solid var(--g-border); border-left:4px solid var(--g); }
-.note.red    { background:var(--red-bg); border:1px solid var(--red-border); border-left:4px solid var(--red); }
-.note.yellow { background:var(--yellow-bg); border:1px solid var(--yellow-border); border-left:4px solid var(--yellow); }
-.note.grey   { background:var(--bg2); border:1px solid var(--border); border-left:4px solid var(--muted); }
-.note strong { color:var(--navy); }
-
-/* TITLE SLIDE */
-.title-badge { display:inline-flex; align-items:center; gap:8px; font-size:.62em; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#fff; background:var(--g2); padding:5px 14px; border-radius:100px; margin-bottom:22px; }
-.title-sub { color:var(--text); font-size:.82em; line-height:1.7; margin-top:16px; max-width:560px; }
-.title-meta { display:flex; gap:22px; flex-wrap:wrap; margin-top:28px; padding-top:16px; border-top:1px solid var(--border); font-size:.63em; color:var(--muted); }
-.title-accent { position:absolute; right:40px; top:50%; transform:translateY(-50%); width:280px; height:280px; background:linear-gradient(135deg,var(--g-light),#ecfdf5); border-radius:24px; border:1px solid var(--g-border); display:flex; align-items:center; justify-content:center; font-size:8em; opacity:.7; }
-
-/* ROI CARDS */
-.roi-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:8px; }
-.roi-card { padding:22px 20px; border-radius:14px; background:var(--bg2); border:1px solid var(--border); position:relative; }
-.roi-card.featured { background:var(--navy); border-color:var(--navy); color:#fff; }
-.roi-card .roi-icon { font-size:1.6em; margin-bottom:10px; display:block; }
-.roi-card h4 { font-size:.82em; color:var(--navy); margin-bottom:6px; font-weight:800; }
-.roi-card.featured h4 { color:#fff; }
-.roi-card p { font-size:.68em; color:var(--text); line-height:1.6; }
-.roi-card.featured p { color:#cbd5e1; }
-.roi-card .roi-val { font-size:2em; font-weight:900; color:var(--g); line-height:1; display:block; margin-bottom:4px; }
-.roi-card.featured .roi-val { color:#34d399; }
-
-/* TIMELINE */
-.timeline { display:flex; flex-direction:column; gap:0; margin-top:4px; }
-.tl-item { display:grid; grid-template-columns:90px 1fr; gap:0; position:relative; }
-.tl-left { display:flex; flex-direction:column; align-items:center; padding-top:4px; }
-.tl-dot { width:14px; height:14px; border-radius:50%; background:var(--g); border:2px solid #fff; box-shadow:0 0 0 2px var(--g); flex-shrink:0; z-index:1; }
-.tl-line { width:2px; flex:1; background:var(--g-border); min-height:20px; }
-.tl-month { font-size:.6em; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--g2); margin-top:2px; text-align:center; }
-.tl-content { padding:2px 0 22px 18px; }
-.tl-content h4 { font-size:.82em; color:var(--navy); font-weight:800; margin-bottom:5px; }
-.tl-content ul { padding-left:14px; font-size:.68em; color:var(--text); line-height:1.7; }
-.tl-content .tl-tag { display:inline-flex; align-items:center; font-size:.6em; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--g2); background:var(--g-light); padding:2px 8px; border-radius:100px; margin-bottom:6px; }
-
-/* RISK / COST OF WAITING */
-.risk-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:8px; }
-.risk-card { padding:18px 18px; border-radius:12px; }
-.risk-card.bad { background:var(--red-bg); border:1px solid var(--red-border); }
-.risk-card.good { background:var(--g-light); border:1px solid var(--g-border); }
-.risk-card .rlabel { font-size:.58em; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin-bottom:10px; display:block; }
-.risk-card.bad .rlabel { color:var(--red); }
-.risk-card.good .rlabel { color:var(--g2); }
-.risk-card ul { padding-left:16px; font-size:.7em; line-height:1.8; color:var(--text); }
-
-/* SUCCESS STORY */
-.story-wrap { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:8px; align-items:start; }
-.metric-stack { display:flex; flex-direction:column; gap:10px; }
-.metric-box { padding:16px 18px; border-radius:12px; background:var(--navy); border:1px solid var(--navy2); text-align:center; }
-.metric-box .mv { font-size:2.4em; font-weight:900; color:#34d399; line-height:1; display:block; }
-.metric-box .ml { font-size:.62em; color:#94a3b8; margin-top:4px; display:block; }
-.story-detail { }
-.story-detail h4 { font-size:.85em; color:var(--navy); font-weight:800; margin-bottom:10px; }
-.story-detail ul { padding-left:16px; font-size:.7em; color:var(--text); line-height:1.8; margin-bottom:12px; }
-
-/* OFFER */
-.offer-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:8px; }
-.offer-card { padding:18px 18px; border-radius:12px; background:var(--bg2); border:1px solid var(--border); }
-.offer-card .oicon { font-size:1.4em; margin-bottom:8px; display:block; }
-.offer-card h4 { font-size:.82em; color:var(--navy); font-weight:800; margin-bottom:6px; }
-.offer-card p, .offer-card ul { font-size:.68em; color:var(--text); line-height:1.7; padding-left:0; list-style:none; }
-.offer-card ul li::before { content:'✓ '; color:var(--g2); font-weight:700; }
-
-/* CTA */
-.cta-center { display:flex; flex-direction:column; align-items:flex-start; gap:20px; margin-top:16px; }
-.cta-box { background:var(--g); border-radius:14px; padding:20px 28px; display:inline-block; }
-.cta-box h3 { color:#fff; font-size:1.2em; font-weight:900; margin-bottom:6px; }
-.cta-box p { color:#d1fae5; font-size:.75em; }
-.cta-chips { display:flex; gap:12px; flex-wrap:wrap; }
-.cta-chip { display:flex; align-items:center; gap:8px; padding:10px 16px; border-radius:10px; background:var(--bg2); border:1px solid var(--border); font-size:.7em; font-weight:600; color:var(--navy); }
-.cta-chip .ci { font-size:1.2em; }
-
-/* DIVIDER SLIDE */
-.divider-wrap { display:flex; flex-direction:column; justify-content:center; height:80%; }
-.divider-wrap .dnum { font-size:.7em; font-weight:800; color:var(--g); letter-spacing:.12em; text-transform:uppercase; margin-bottom:12px; }
-.divider-wrap h1 { font-size:3em; color:var(--navy); line-height:1.1; }
-.divider-wrap .dsub { font-size:.85em; color:var(--muted); margin-top:16px; max-width:480px; line-height:1.6; }
+.reveal-viewport{background:#fff}
+.reveal .slides{font-family:"Helvetica Neue",-apple-system,sans-serif;color:var(--tx)}
+.reveal .slides section{text-align:left;padding:34px 52px 26px;height:100%;overflow:hidden;background:#fff}
+.reveal h1,.reveal h2,.reveal h3,.reveal h4{font-family:"Helvetica Neue",-apple-system,sans-serif;font-weight:800;letter-spacing:-.025em;text-transform:none;color:var(--navy);line-height:1.15;margin:0}
+.reveal h1{font-size:2.4em}
+.reveal h2{font-size:1.65em;margin-bottom:14px}
+.reveal h2 span{color:var(--g)}
+.topbar{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g),#34d399)}
+.ey{display:inline-flex;align-items:center;font-size:.57em;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g2);background:var(--gl);padding:3px 11px;border-radius:100px;margin-bottom:11px}
+.reveal .progress{color:var(--g);height:2px}
+.reveal .slide-number{color:var(--mu);font-size:.5em;background:none}
+.note{padding:9px 14px;border-radius:9px;font-size:.66em;color:var(--tx);line-height:1.65;margin-top:9px}
+.note.green{background:var(--gl);border:1px solid var(--gb);border-left:4px solid var(--g)}
+.note.red{background:var(--redbg);border:1px solid var(--redbd);border-left:4px solid var(--red)}
+.note.yel{background:var(--yelbg);border:1px solid var(--yelbd);border-left:4px solid var(--yel)}
+.note.grey{background:var(--bg2);border:1px solid var(--bd);border-left:4px solid var(--mu)}
+.note strong{color:var(--navy)}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:8px;background:var(--gl);flex-shrink:0}
+.ico svg{width:15px;height:15px;stroke:var(--g2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ico.dk{background:var(--navy)}
+.ico.dk svg{stroke:#34d399}
+/* title */
+.tsub{color:var(--tx);font-size:.78em;line-height:1.7;margin-top:14px;max-width:540px}
+.tchips{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;padding-top:14px;border-top:1px solid var(--bd)}
+.tchip{display:flex;align-items:center;gap:7px;font-size:.63em;font-weight:600;color:var(--mu)}
+.tchip svg{width:13px;height:13px;stroke:var(--g);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+/* about */
+.aintro{font-size:.74em;color:var(--tx);line-height:1.7;margin-bottom:12px;max-width:740px}
+.agrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px}
+.acard{padding:14px 15px;border-radius:11px;background:var(--bg2);border:1px solid var(--bd)}
+.acard .ah{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.acard h4{font-size:.74em;color:var(--navy);font-weight:800}
+.acard p{font-size:.63em;color:var(--tx);line-height:1.65}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
+.bdg{display:inline-flex;align-items:center;font-size:.55em;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:100px;border:1px solid var(--gb);color:var(--g2);background:var(--gl)}
+/* career */
+.clist{display:flex;flex-direction:column;gap:6px;margin-top:4px}
+.crow{display:grid;grid-template-columns:38px 1fr 1.7fr;gap:11px;align-items:center;padding:8px 12px;border-radius:10px;background:var(--bg2);border:1px solid var(--bd)}
+.fav{width:26px;height:26px;border-radius:6px;border:1px solid var(--bd);background:#fff;object-fit:contain;padding:2px}
+.ci h4{font-size:.72em;font-weight:800;color:var(--navy)}
+.ci p{font-size:.58em;color:var(--mu);margin-top:1px}
+.cw{display:flex;align-items:flex-start;gap:6px}
+.cw svg{width:12px;height:12px;stroke:var(--g2);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;margin-top:2px}
+.cw span{font-size:.62em;color:var(--tx);line-height:1.5}
+/* roi stats */
+.rstats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;margin-bottom:13px}
+.rstat{padding:14px 15px;border-radius:11px;text-align:center}
+.rstat.ft{background:var(--navy);border:1px solid var(--navy2)}
+.rstat.pl{background:var(--bg2);border:1px solid var(--bd)}
+.rstat .rv{font-size:2em;font-weight:900;line-height:1;display:block;margin-bottom:3px}
+.rstat.ft .rv{color:#34d399}
+.rstat.pl .rv{color:var(--navy)}
+.rstat .rl{font-size:.59em;display:block;line-height:1.4}
+.rstat.ft .rl{color:#94a3b8}
+.rstat.pl .rl{color:var(--mu)}
+/* growth */
+.gwrap{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+.gmcol{display:flex;flex-direction:column;gap:8px}
+.gmrow{display:flex;align-items:center;gap:10px;padding:10px 13px;border-radius:10px;background:var(--bg2);border:1px solid var(--bd)}
+.gmico{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:7px;background:var(--gl);flex-shrink:0}
+.gmico svg{width:14px;height:14px;stroke:var(--g2);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gmv{font-size:1.45em;font-weight:900;color:var(--navy);line-height:1;flex-shrink:0;min-width:54px}
+.gmv em{font-size:.48em;font-weight:700;color:var(--g2);font-style:normal}
+.gml{font-size:.63em;color:var(--tx);line-height:1.5}
+.cbox{background:var(--bg2);border:1px solid var(--bd);border-radius:11px;padding:13px 15px}
+.clabel{font-size:.57em;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--mu);margin-bottom:9px;display:flex;align-items:center;gap:6px}
+.clabel::before{content:'';display:inline-block;width:3px;height:11px;background:var(--g);border-radius:2px}
+.csvg{width:100%;height:95px;display:block}
+/* risk */
+.rgrid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:7px}
+.rcard{padding:15px 15px;border-radius:11px}
+.rcard.bad{background:var(--redbg);border:1px solid var(--redbd)}
+.rcard.good{background:var(--gl);border:1px solid var(--gb)}
+.rcard .rl2{font-size:.56em;font-weight:800;letter-spacing:.09em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.rcard.bad .rl2{color:var(--red)}
+.rcard.good .rl2{color:var(--g2)}
+.rcard .rl2 svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.rcard ul{padding-left:14px;font-size:.66em;line-height:1.85;color:var(--tx)}
+/* offer */
+.ogrid{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:5px}
+.ocard{padding:14px 15px;border-radius:11px;background:var(--bg2);border:1px solid var(--bd)}
+.ocard .oh{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.ocard h4{font-size:.76em;color:var(--navy);font-weight:800}
+.ocard p,.ocard ul{font-size:.64em;color:var(--tx);line-height:1.7;list-style:none;padding:0}
+.ocard ul li{display:flex;align-items:flex-start;gap:7px;margin-bottom:3px}
+.ocard ul li::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:6px}
+/* timeline */
+.tl{display:flex;flex-direction:column;margin-top:5px}
+.tli{display:grid;grid-template-columns:76px 1fr}
+.tll{display:flex;flex-direction:column;align-items:center;padding-top:2px}
+.tlm{font-size:.55em;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--g2);text-align:center}
+.tld{width:12px;height:12px;border-radius:50%;background:var(--g);border:2px solid #fff;box-shadow:0 0 0 2px var(--g);flex-shrink:0;margin:3px 0}
+.tlln{width:2px;flex:1;background:var(--gb);min-height:12px}
+.tlc{padding:1px 0 16px 15px}
+.tlt{display:inline-flex;font-size:.54em;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--g2);background:var(--gl);padding:2px 8px;border-radius:100px;margin-bottom:4px}
+.tlc h4{font-size:.76em;color:var(--navy);font-weight:800;margin-bottom:3px}
+.tlc ul{padding-left:13px;font-size:.64em;color:var(--tx);line-height:1.75}
+/* success */
+.swrap{display:grid;grid-template-columns:200px 1fr;gap:18px;margin-top:5px}
+.mstack{display:flex;flex-direction:column;gap:8px}
+.mbox{padding:13px 14px;border-radius:11px;background:var(--navy);text-align:center}
+.mbox .mv2{font-size:1.9em;font-weight:900;color:#34d399;line-height:1;display:block}
+.mbox .ml2{font-size:.58em;color:#94a3b8;margin-top:3px;display:block}
+.sdet h4{font-size:.8em;color:var(--navy);font-weight:800;margin-bottom:7px}
+.sdet ul{padding-left:14px;font-size:.66em;color:var(--tx);line-height:1.8;margin-bottom:9px}
+/* cta */
+.ctachips{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:16px}
+.ctachip{display:flex;align-items:center;gap:7px;padding:8px 13px;border-radius:9px;background:var(--bg2);border:1px solid var(--bd);font-size:.66em;font-weight:600;color:var(--navy)}
+.ctachip svg{width:13px;height:13px;stroke:var(--g2);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ctabox{background:var(--g);border-radius:13px;padding:16px 22px;display:inline-block}
+.ctabox h3{color:#fff;font-size:1.05em;font-weight:900;margin-bottom:4px}
+.ctabox p{color:#d1fae5;font-size:.7em}
 </style>
 </head>
 <body>
-<div class="reveal">
-<div class="slides">
+<div class="reveal"><div class="slides">
 
 <!-- SLIDE 1: TITLE -->
 <section>
-  <div class="topbar"></div>
-  <div class="title-accent">🚀</div>
-  <div class="title-badge">For Veloq · March 2026</div>
-  <h1>The Case for<br><span style="color:var(--g)">Starting Now</span></h1>
-  <p class="title-sub">Why waiting is the most expensive decision Veloq can make — and how we close the gap in 90 days.</p>
-  <div class="title-meta">
-    <span>👤 Filipe Lins Duarte</span>
-    <span>📍 Lisbon, Portugal</span>
-    <span>📅 March 2026</span>
+<div class="topbar"></div>
+<div class="ey">For Veloq</div>
+<h1>The Case for<br><span style="color:var(--g)">Starting Now</span></h1>
+<p class="tsub">Why waiting is the most expensive decision Veloq can make, and how we close the gap in 90 days.</p>
+<div class="tchips">
+  <div class="tchip">
+    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    3-Month Engagement
   </div>
+  <div class="tchip">
+    <svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    No Long-Term Contract
+  </div>
+  <div class="tchip">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    Week-One Execution
+  </div>
+  <div class="tchip">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+    Decision at Day 90
+  </div>
+</div>
 </section>
 
-<!-- SLIDE 2: THE CONCERN — ADDRESSED DIRECTLY -->
+<!-- SLIDE 2: WHO I AM -->
 <section>
-  <div class="topbar"></div>
-  <div class="eyebrow">The question on the table</div>
-  <h2>Is this worth the <span>investment?</span></h2>
-  <div class="roi-grid">
-    <div class="roi-card">
-      <span class="roi-icon">📉</span>
-      <h4>The concern</h4>
-      <p>Will the cost of engagement deliver measurable ROI? Is this the right moment to invest in SEO and content?</p>
+<div class="topbar"></div>
+<div class="ey">About me</div>
+<h2>Who I <span>am</span></h2>
+<p class="aintro">I am a sales and growth professional who has operated across four continents, built and sold a company, and now focuses on helping businesses grow through AI-era SEO and content strategy. I combine rigorous analytical training with hands-on execution across every stage of the growth cycle.</p>
+<div class="agrid">
+  <div class="acard">
+    <div class="ah">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+      <h4>Founder and Builder</h4>
     </div>
-    <div class="roi-card featured">
-      <span class="roi-val">$12K</span>
-      <h4>Proven ROI — 90 days</h4>
-      <p>A previous client generated €12,000 in revenue in 3 months — purely from organic traffic built from scratch.</p>
-    </div>
-    <div class="roi-card">
-      <span class="roi-icon">📈</span>
-      <h4>Organic compounds</h4>
-      <p>Unlike paid ads, SEO doesn't stop when the budget runs out. Every month builds on the last — permanently.</p>
-    </div>
+    <p>Co-founded and sold a loyalty SaaS to a group of FAANG engineers and PMs. Now building Peekaboo, taking on every commercial function simultaneously as co-founder.</p>
   </div>
-  <div class="note green" style="margin-top:14px;"><strong>Short answer:</strong> The question isn't whether SEO delivers ROI. It does. The question is whether Veloq can afford to let competitors keep compounding while they wait.</div>
+  <div class="acard">
+    <div class="ah">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+      <h4>Commercial Performer</h4>
+    </div>
+    <p>Ranked number one AE at Meister in 2023 with 100%+ ARR growth. Closed a global six-figure deal at Uber. Consistently above quota across EMEA, APAC and LATAM.</p>
+  </div>
+  <div class="acard">
+    <div class="ah">
+      <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20"/></svg></div>
+      <h4>Global Operator</h4>
+    </div>
+    <p>Lived and worked in Portugal, UK, Austria, Myanmar, Malaysia and Australia. CEMS Masters in International Management from a programme ranked 3rd globally by the FT.</p>
+  </div>
+</div>
+<div class="badges">
+  <span class="bdg">Peoples Choice Award - Canopy Community 2025</span>
+  <span class="bdg">1st Class Honours - Coventry University</span>
+  <span class="bdg">CEMS Masters - Top 3 Globally (FT Ranking)</span>
+</div>
 </section>
 
-<!-- SLIDE 3: COST OF WAITING -->
+<!-- SLIDE 3: CAREER -->
 <section>
-  <div class="topbar"></div>
-  <div class="eyebrow">The real risk</div>
-  <h2>Every month you wait, <span>competitors pull ahead</span></h2>
-  <div class="risk-grid">
-    <div class="risk-card bad">
-      <span class="rlabel">❌ If you wait 6 more months</span>
-      <ul>
-        <li>Competitors rank for your best keywords</li>
-        <li>Google domain authority gap widens</li>
-        <li>Content takes 3–6 months to rank — clock hasn't started</li>
-        <li>New hires onboard with no SEO foundation</li>
-        <li>You're 12 months behind by the time you act</li>
-      </ul>
+<div class="topbar"></div>
+<div class="ey">Track record</div>
+<h2>Where I have <span>operated</span></h2>
+<div class="clist">
+  <div class="crow">
+    <img class="fav" src="https://www.google.com/s2/favicons?domain=aipeekaboo.com&sz=64" alt="Peekaboo">
+    <div class="ci">
+      <h4>Peekaboo</h4>
+      <p>Co-Founder &nbsp;·&nbsp; Aug 2025 - Present &nbsp;·&nbsp; United States (Remote)</p>
     </div>
-    <div class="risk-card good">
-      <span class="rlabel">✅ If you start now</span>
-      <ul>
-        <li>Foundation built while competitors sleep</li>
-        <li>First organic traffic within 6–8 weeks</li>
-        <li>New team members onboard into a working system</li>
-        <li>Compound growth starts immediately</li>
-        <li>You end 2026 ahead — not catching up</li>
-      </ul>
+    <div class="cw">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Leading all commercial, product, marketing, UX, and operations functions alongside the engineering team</span>
     </div>
   </div>
-  <div class="note yellow"><strong>SEO is a time-sensitive asset.</strong> The earlier you start building domain authority, the larger the moat. Your competitors are building theirs right now.</div>
+  <div class="crow">
+    <img class="fav" src="https://www.google.com/s2/favicons?domain=uber.com&sz=64" alt="Uber">
+    <div class="ci">
+      <h4>Uber for Business</h4>
+      <p>Mid-Market Account Executive &nbsp;·&nbsp; Sep 2024 - Aug 2025 &nbsp;·&nbsp; Lisbon</p>
+    </div>
+    <div class="cw">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>146% of quota in H2 2024. Closed a global six-figure deal in H1 2025. Mid-Market and Enterprise accounts across Portugal.</span>
+    </div>
+  </div>
+  <div class="crow">
+    <img class="fav" src="https://www.google.com/s2/favicons?domain=meistertask.com&sz=64" alt="Meister">
+    <div class="ci">
+      <h4>Meister</h4>
+      <p>Account Executive &nbsp;·&nbsp; Aug 2022 - Jul 2024 &nbsp;·&nbsp; Vienna</p>
+    </div>
+    <div class="cw">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>#1 Best Performing AE in 2023 with 100%+ ARR growth. Full sales cycle across EMEA, APAC and LATAM.</span>
+    </div>
+  </div>
+  <div class="crow">
+    <img class="fav" src="https://www.google.com/s2/favicons?domain=amazon.com&sz=64" alt="Amazon">
+    <div class="ci">
+      <h4>Amazon</h4>
+      <p>Area Manager &nbsp;·&nbsp; Aug 2020 - Jul 2021 &nbsp;·&nbsp; Manchester, UK</p>
+    </div>
+    <div class="cw">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Led 100+ person teams delivering 150K daily shipments. Improved safety by 11% and productivity by 14%.</span>
+    </div>
+  </div>
+  <div class="crow">
+    <img class="fav" src="https://www.google.com/s2/favicons?domain=deloitte.com&sz=64" alt="Deloitte">
+    <div class="ci">
+      <h4>Deloitte</h4>
+      <p>Risk Advisory Intern &nbsp;·&nbsp; May - Sep 2019 &nbsp;·&nbsp; Yangon, Myanmar</p>
+    </div>
+    <div class="cw">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Consultant-level responsibilities. Audited $500K+ in donor cash for multinational NGOs across Southeast Asia.</span>
+    </div>
+  </div>
+</div>
 </section>
 
-<!-- SLIDE 4: WHAT YOU GET -->
+<!-- SLIDE 4: IS IT WORTH IT -->
 <section>
-  <div class="topbar"></div>
-  <div class="eyebrow">The engagement</div>
-  <h2>What Veloq gets <span>from day one</span></h2>
-  <div class="offer-grid">
-    <div class="offer-card">
-      <span class="oicon">⚡</span>
-      <h4>Immediate execution — no ramp-up</h4>
-      <p>I bring the strategy, the playbooks, and the tools. No 3-month discovery phase. We move in week one.</p>
+<div class="topbar"></div>
+<div class="ey">The question on the table</div>
+<h2>Is this worth the <span>investment?</span></h2>
+<div class="rstats">
+  <div class="rstat ft"><span class="rv">$12K</span><span class="rl">Revenue from organic traffic in 90 days</span></div>
+  <div class="rstat pl"><span class="rv">74%</span><span class="rl">Increase in organic clicks</span></div>
+  <div class="rstat pl"><span class="rv">63%</span><span class="rl">Increase in impressions</span></div>
+</div>
+<div class="gwrap">
+  <div class="cbox">
+    <div class="clabel">Organic growth trajectory across 3 months</div>
+    <svg class="csvg" viewBox="0 0 300 95" preserveAspectRatio="none">
+      <line x1="0" y1="75" x2="300" y2="75" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="0" y1="52" x2="300" y2="52" stroke="#e2e8f0" stroke-width="1"/>
+      <line x1="0" y1="28" x2="300" y2="28" stroke="#e2e8f0" stroke-width="1"/>
+      <path d="M10,73 C60,70 100,66 150,58 C200,49 240,36 290,18" fill="none" stroke="#a7f3d0" stroke-width="2" stroke-dasharray="4,3"/>
+      <path d="M10,77 C55,74 100,70 150,62 C200,53 245,40 290,24" fill="none" stroke="#10b981" stroke-width="2.5"/>
+      <path d="M10,80 C65,79 110,77 160,74 C210,70 255,63 290,50" fill="none" stroke="#0d2137" stroke-width="2"/>
+      <rect x="10" y="83" width="7" height="2" fill="#10b981" rx="1"/>
+      <text x="21" y="90" font-size="7" fill="#94a3b8" font-family="Helvetica Neue,sans-serif">Clicks</text>
+      <rect x="68" y="83" width="7" height="2" fill="#a7f3d0" rx="1"/>
+      <text x="79" y="90" font-size="7" fill="#94a3b8" font-family="Helvetica Neue,sans-serif">Impressions</text>
+      <rect x="150" y="83" width="7" height="2" fill="#0d2137" rx="1"/>
+      <text x="161" y="90" font-size="7" fill="#94a3b8" font-family="Helvetica Neue,sans-serif">ChatGPT Referrals</text>
+      <text x="8" y="73" font-size="6.5" fill="#cbd5e1" font-family="Helvetica Neue,sans-serif">Start</text>
+      <text x="135" y="73" font-size="6.5" fill="#cbd5e1" font-family="Helvetica Neue,sans-serif">Month 2</text>
+      <text x="262" y="73" font-size="6.5" fill="#cbd5e1" font-family="Helvetica Neue,sans-serif">Month 3</text>
+    </svg>
+  </div>
+  <div class="gmcol">
+    <div class="gmrow">
+      <div class="gmico"><svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+      <div class="gmv">74%<em> up</em></div>
+      <div class="gml">Increase in organic clicks from Google Search</div>
     </div>
-    <div class="offer-card">
-      <span class="oicon">🏗️</span>
+    <div class="gmrow">
+      <div class="gmico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg></div>
+      <div class="gmv">63%<em> up</em></div>
+      <div class="gml">Increase in impressions across all search channels</div>
+    </div>
+    <div class="gmrow">
+      <div class="gmico"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div class="gmv">93%<em> up</em></div>
+      <div class="gml">Increase in referral traffic from ChatGPT</div>
+    </div>
+  </div>
+</div>
+<div class="note green" style="margin-top:10px"><strong>All results above</strong> were generated in a single 90-day engagement. No paid ads. Purely organic.</div>
+</section>
+
+<!-- SLIDE 5: COST OF WAITING -->
+<section>
+<div class="topbar"></div>
+<div class="ey">The real risk</div>
+<h2>Every month you wait, <span>competitors compound</span></h2>
+<p style="font-size:.72em;color:var(--tx);line-height:1.6;margin-bottom:12px;max-width:700px">SEO is a time-sensitive asset. Every week you wait, your competitors are building domain authority, ranking for your keywords, and capturing the AI-generated traffic that could be yours.</p>
+<div class="rgrid">
+  <div class="rcard bad">
+    <div class="rl2">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      If you wait 6 more months
+    </div>
+    <ul>
+      <li>Competitors rank for your best keywords</li>
+      <li>Domain authority gap widens every week</li>
+      <li>Content takes 3 to 6 months to rank and that clock has not started yet</li>
+      <li>New hires onboard with no SEO foundation</li>
+      <li>You are 12 months behind by the time you act</li>
+      <li>AI referral channels go to whoever shows up first</li>
+    </ul>
+  </div>
+  <div class="rcard good">
+    <div class="rl2">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      If you start now
+    </div>
+    <ul>
+      <li>Foundation built while competitors sleep</li>
+      <li>First organic traffic within 6 to 8 weeks</li>
+      <li>New team members onboard into a working system</li>
+      <li>AI search visibility on ChatGPT and Perplexity established early</li>
+      <li>Compound growth starts immediately</li>
+      <li>You end 2026 ahead, not catching up</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 6: WHAT YOU GET -->
+<section>
+<div class="topbar"></div>
+<div class="ey">The engagement</div>
+<h2>What Veloq gets <span>from day one</span></h2>
+<div class="ogrid">
+  <div class="ocard">
+    <div class="oh">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+      <h4>Immediate execution, no ramp-up</h4>
+    </div>
+    <p>I bring the strategy, the playbooks, and the tools. No 3-month discovery phase. We move in week one.</p>
+  </div>
+  <div class="ocard">
+    <div class="oh">
+      <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
       <h4>A system, not just deliverables</h4>
-      <ul>
-        <li>Keyword strategy + content calendar</li>
-        <li>On-page + technical SEO foundation</li>
-        <li>AI search visibility (GEO) built in</li>
-        <li>Processes your team can own long-term</li>
-      </ul>
     </div>
-    <div class="offer-card">
-      <span class="oicon">👥</span>
+    <ul>
+      <li>Keyword strategy and content calendar</li>
+      <li>On-page and technical SEO foundation</li>
+      <li>AI search visibility built in from the start</li>
+      <li>Processes your team can own long-term</li>
+    </ul>
+  </div>
+  <div class="ocard">
+    <div class="oh">
+      <div class="ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
       <h4>Your team learns as we build</h4>
-      <p>Future hires onboard into a live, documented system — not a blank slate. Every new team member hits the ground running.</p>
     </div>
-    <div class="offer-card">
-      <span class="oicon">🔓</span>
+    <p>Future hires onboard into a live, documented system. Every new team member hits the ground running from day one.</p>
+  </div>
+  <div class="ocard">
+    <div class="oh">
+      <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
       <h4>No lock-in. 90-day trial model</h4>
-      <p>Start with a 3-month engagement. At the end, Veloq decides whether to continue, hire in-house, or go independent. You own everything we build.</p>
     </div>
+    <p>Start with a 3-month engagement. At the end, Veloq decides whether to continue, scale, or go in-house. You own everything we build.</p>
   </div>
+</div>
 </section>
 
-<!-- SLIDE 5: THE 90-DAY PLAN -->
+<!-- SLIDE 7: 90-DAY PLAN -->
 <section>
-  <div class="topbar"></div>
-  <div class="eyebrow">The plan</div>
-  <h2>90 days to a <span>working growth engine</span></h2>
-  <div class="timeline">
-    <div class="tl-item">
-      <div class="tl-left">
-        <div class="tl-month">Month 1</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-content">
-        <span class="tl-tag">Foundation</span>
-        <h4>Audit, Strategy & Quick Wins</h4>
-        <ul>
-          <li>Full SEO audit — technical, content, competitive gaps</li>
-          <li>Keyword map and content priority list</li>
-          <li>Fix critical technical issues blocking rankings</li>
-          <li>First optimised pages go live</li>
-        </ul>
-      </div>
+<div class="topbar"></div>
+<div class="ey">The plan</div>
+<h2>90 days to a <span>working growth engine</span></h2>
+<div class="tl">
+  <div class="tli">
+    <div class="tll">
+      <div class="tlm">Month 1</div>
+      <div class="tld"></div>
+      <div class="tlln"></div>
     </div>
-    <div class="tl-item">
-      <div class="tl-left">
-        <div class="tl-month">Month 2</div>
-        <div class="tl-dot"></div>
-        <div class="tl-line"></div>
-      </div>
-      <div class="tl-content">
-        <span class="tl-tag">Build</span>
-        <h4>Content Engine & Authority Building</h4>
-        <ul>
-          <li>High-priority content pieces published and indexed</li>
-          <li>Internal linking structure optimised</li>
-          <li>First backlink outreach and partner integrations</li>
-        </ul>
-      </div>
-    </div>
-    <div class="tl-item">
-      <div class="tl-left">
-        <div class="tl-month">Month 3</div>
-        <div class="tl-dot"></div>
-      </div>
-      <div class="tl-content">
-        <span class="tl-tag">Compound</span>
-        <h4>Ranking, Traffic & Decision Point</h4>
-        <ul>
-          <li>First keyword rankings visible in Search Console</li>
-          <li>Organic traffic growing month-over-month</li>
-          <li>Full handover documentation — your team can run it</li>
-          <li>Decision: continue, scale, or go in-house — your call</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SLIDE 6: SUCCESS STORY -->
-<section>
-  <div class="topbar"></div>
-  <div class="eyebrow">Proof it works</div>
-  <h2>Real results. <span>90 days. From zero.</span></h2>
-  <div class="story-wrap">
-    <div class="metric-stack">
-      <div class="metric-box">
-        <span class="mv">€12K</span>
-        <span class="ml">Revenue from organic traffic — 3 months</span>
-      </div>
-      <div class="metric-box">
-        <span class="mv">0→1</span>
-        <span class="ml">Started with no SEO foundation</span>
-      </div>
-      <div class="metric-box">
-        <span class="mv">100%</span>
-        <span class="ml">Organic — no paid ads</span>
-      </div>
-    </div>
-    <div class="story-detail">
-      <h4>How it happened</h4>
+    <div class="tlc">
+      <span class="tlt">Foundation</span>
+      <h4>Audit, Strategy and Quick Wins</h4>
       <ul>
-        <li>Started from scratch — no existing traffic or rankings</li>
-        <li>Built the full content and technical foundation in month one</li>
-        <li>Targeted high-intent, low-competition keywords first</li>
-        <li>Content indexed and ranking by week 6</li>
-        <li>Organic leads converting to paying customers by month 3</li>
+        <li>Full SEO audit covering technical, content, and competitive gaps</li>
+        <li>Keyword map and prioritised content list</li>
+        <li>Fix critical technical issues blocking rankings</li>
+        <li>First optimised pages go live</li>
       </ul>
-      <div class="note green"><strong>This isn't a one-off.</strong> It's a repeatable system — and it's exactly what I'd build for Veloq.</div>
     </div>
   </div>
-</section>
-
-<!-- SLIDE 7: WHY ME -->
-<section>
-  <div class="topbar"></div>
-  <div class="eyebrow">Why Filipe</div>
-  <h2>Expertise you can <span>activate immediately</span></h2>
-  <div class="roi-grid">
-    <div class="roi-card">
-      <span class="roi-icon">🧠</span>
-      <h4>Deep SEO + AI search expertise</h4>
-      <p>Experience across traditional SEO, AI Overviews, Generative Engine Optimization (GEO) — the new frontier most agencies don't touch yet.</p>
+  <div class="tli">
+    <div class="tll">
+      <div class="tlm">Month 2</div>
+      <div class="tld"></div>
+      <div class="tlln"></div>
     </div>
-    <div class="roi-card">
-      <span class="roi-icon">🚀</span>
-      <h4>Execution from day one</h4>
-      <p>No discovery phase, no lengthy onboarding. I audit, prioritise, and start shipping improvements in week one.</p>
-    </div>
-    <div class="roi-card">
-      <span class="roi-icon">📋</span>
-      <h4>You keep everything</h4>
-      <p>All strategies, playbooks, content calendars, and documentation are fully yours. When we're done, your team owns the system.</p>
+    <div class="tlc">
+      <span class="tlt">Build</span>
+      <h4>Content Engine and Authority Building</h4>
+      <ul>
+        <li>High-priority content pieces published and indexed</li>
+        <li>Internal linking structure optimised</li>
+        <li>First backlink outreach and partner integrations</li>
+      </ul>
     </div>
   </div>
-  <div class="note grey" style="margin-top:14px;"><strong>Bonus:</strong> Any team members Veloq hires during or after the engagement onboard into a live, working system — not a blank page.</div>
-</section>
-
-<!-- SLIDE 8: CTA -->
-<section>
-  <div class="topbar"></div>
-  <div class="eyebrow">The decision</div>
-  <h2>Start now. <span>Own the outcome.</span></h2>
-  <p style="font-size:.78em;color:var(--text);line-height:1.7;margin-bottom:20px;max-width:580px;">Three months. No lock-in. A fully built SEO foundation your team can run independently — or we keep scaling together. Either way, Veloq wins.</p>
-  <div class="cta-chips" style="margin-bottom:20px;">
-    <div class="cta-chip"><span class="ci">✅</span> 3-month engagement</div>
-    <div class="cta-chip"><span class="ci">🔓</span> No long-term contract</div>
-    <div class="cta-chip"><span class="ci">📦</span> You own all deliverables</div>
-    <div class="cta-chip"><span class="ci">⚡</span> Week-one execution</div>
-    <div class="cta-chip"><span class="ci">👥</span> Team onboarding included</div>
+  <div class="tli">
+    <div class="tll">
+      <div class="tlm">Month 3</div>
+      <div class="tld"></div>
+    </div>
+    <div class="tlc">
+      <span class="tlt">Compound</span>
+      <h4>Ranking, Traffic and Decision Point</h4>
+      <ul>
+        <li>First keyword rankings visible in Search Console</li>
+        <li>Organic traffic growing month over month</li>
+        <li>Full handover documentation ready</li>
+        <li>Decision: continue, scale, or go in-house. Your call.</li>
+      </ul>
+    </div>
   </div>
-  <div class="cta-box">
-    <h3>Ready to start?</h3>
-    <p>Let's schedule a 30-minute call to align on scope and kick off month one.</p>
-  </div>
-  <div style="margin-top:16px;font-size:.62em;color:var(--muted);">Filipe Lins Duarte &nbsp;·&nbsp; filipeoliveira.duarte@gmail.com &nbsp;·&nbsp; Lisbon, Portugal</div>
-</section>
-
 </div>
-</div>
+</section>
 
+<!-- SLIDE 8: SUCCESS STORY -->
+<section>
+<div class="topbar"></div>
+<div class="ey">Proof it works</div>
+<h2>Real results. <span>90 days. From zero.</span></h2>
+<div class="swrap">
+  <div class="mstack">
+    <div class="mbox">
+      <span class="mv2">$12K</span>
+      <span class="ml2">Revenue from organic traffic in 3 months</span>
+    </div>
+    <div class="mbox">
+      <span class="mv2">0 to 1</span>
+      <span class="ml2">Started with no SEO foundation</span>
+    </div>
+    <div class="mbox">
+      <span class="mv2">100%</span>
+      <span class="ml2">Organic. No paid ads.</span>
+    </div>
+  </div>
+  <div class="sdet">
+    <h4>How it happened</h4>
+    <ul>
+      <li>Started from scratch with no existing traffic or rankings</li>
+      <li>Built the full content and technical foundation in month one</li>
+      <li>Targeted high-intent, low-competition keywords first</li>
+      <li>Content indexed and ranking by week 6</li>
+      <li>74% increase in organic clicks within the engagement period</li>
+      <li>63% increase in impressions across search channels</li>
+      <li>93% increase in referral traffic from ChatGPT</li>
+      <li>Organic leads converting to paying customers by month 3</li>
+    </ul>
+    <div class="note green"><strong>This is a repeatable system</strong> and it is exactly what I would build for Veloq.</div>
+  </div>
+</div>
+</section>
+
+<!-- SLIDE 9: CTA -->
+<section>
+<div class="topbar"></div>
+<div class="ey">The decision</div>
+<h2>Start now. <span>Own the outcome.</span></h2>
+<p style="font-size:.76em;color:var(--tx);line-height:1.7;margin-bottom:18px;max-width:580px">Three months. No lock-in. A fully built SEO foundation your team can run independently, or we keep scaling together. Either way, Veloq wins.</p>
+<div class="ctachips">
+  <div class="ctachip">
+    <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+    3-month engagement
+  </div>
+  <div class="ctachip">
+    <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+    No long-term contract
+  </div>
+  <div class="ctachip">
+    <svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    You own all deliverables
+  </div>
+  <div class="ctachip">
+    <svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    Week-one execution
+  </div>
+  <div class="ctachip">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    Team onboarding included
+  </div>
+</div>
+<div class="ctabox">
+  <h3>Ready to start?</h3>
+  <p>Let's schedule a 30-minute call to align on scope and kick off month one.</p>
+</div>
+</section>
+
+</div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/5.1.0/reveal.js"></script>
 <script>
 Reveal.initialize({
-  hash: true,
-  slideNumber: 'c/t',
-  progress: true,
-  controls: true,
-  transition: 'slide',
-  transitionSpeed: 'fast',
-  width: 1100,
-  height: 700,
-  margin: 0.04,
+  hash:true, slideNumber:'c/t', progress:true, controls:true,
+  transition:'slide', transitionSpeed:'fast',
+  width:1100, height:700, margin:0.04
 });
 </script>
 </body>
